@@ -10,21 +10,20 @@ namespace Virtual_Pet
     {
         static void Main(string[] args)
         {
-            
+
             VirtualPet Grodd = new VirtualPet();
 
-            Grodd.Intro();
+            Console.WriteLine("Welcome to virtual pet. You will be taking care of Gorilla Grodd. Good luck!");
+            Console.WriteLine("\n");
+            Console.WriteLine("If at any point Grodd's hunger,thirst or attitude levels go below 0 he may rebel");
 
-            while (Grodd.hungerLevel > 0 && Grodd.thirstLevel > 0 && Grodd.wasteLevel < 11)
+
+            //While loop for updating status tracker based on user input
+            while (Grodd.hungerLevel > 0 && Grodd.thirstLevel > 0 && Grodd.funLevel > 0 && Grodd.wasteLevel < 11)
             {
+                Grodd.Directions();
                 Grodd.StatusTracker();
-                int userInput = -1;
-
-                while(userInput != 1 && userInput != 2 && userInput != 3 && userInput !=  0)
-                {
-                    userInput = int.Parse(Console.ReadLine());
-                }
-
+                int userInput = int.Parse(Console.ReadLine());
                 if (userInput == 1)
                 {
                     Grodd.Feed();
@@ -37,30 +36,27 @@ namespace Virtual_Pet
                 {
                     Grodd.Potty();
                 }
-                else if (userInput == 0)
+                else if (userInput == 4)
                 {
                     Grodd.Tude();
                 }
+                else if (userInput == 0)
+                {
+                    Grodd.Tude();
+                }                
                 else
                 {
+                    Console.WriteLine("\n");
                     Console.WriteLine("That was not a valid input, Try again.");
+                    Console.WriteLine("\n");
+                    
                 }
-
-
-
-
-
-
-
-
 
 
             }
 
-
+            Console.WriteLine("\n");
             Console.WriteLine("Gorilla Grodd has broken free. Watch your back!");
-
-
 
 
 

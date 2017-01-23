@@ -50,18 +50,14 @@ namespace Virtual_Pet
         }
 
         //Methods
-        public void Intro()
+        public void Directions() //Instructions for user to interact with virtual pet
         {
-            Console.WriteLine("Welcome to virtual pet. You will be taking care of Gorilla Grodd. Good luck!");
-            Console.WriteLine("\n");
-            Console.WriteLine("Enter 0. to do nothing");
-            Console.WriteLine("Enter 1. to feed Grodd");
-            Console.WriteLine("Enter 2. to water Grodd");
-            Console.WriteLine("Enter 3. to play with Grodd");
+            Console.WriteLine("Enter 0. to do nothing // Enter 1.to feed Grodd // Enter 2. to water Grodd ");
+            Console.WriteLine("Enter 3. to relieve with Grodd // Enter 4. to play with Grodd");
             Console.WriteLine("\n");
         }
 
-        public void StatusTracker()
+        public void StatusTracker() //Displays current status of virtual pets attributes
         {
             Console.WriteLine("Grodd's hunger level is " + appetite);
             Console.WriteLine("Grodd's thirst level is " + hydration);
@@ -69,29 +65,37 @@ namespace Virtual_Pet
             Console.WriteLine("Grodd's attitude level is " + attitude);
         }
 
+        //Below are the methods for altering virtual pets attributes
         public int Feed()
         {
-          appetite += 2; wasteLevel += 1;
+          Console.WriteLine("\n");
+          Console.WriteLine("you fed Grodd");
+          appetite += 2; wasteLevel += 1; hydration -= 1; attitude -= 1;
           return appetite;
         }
 
         public int Water()
         {
-            hydration += 2; wasteLevel += 1;
+            Console.WriteLine("\n");
+            Console.WriteLine("you watered Grodd");
+            hydration += 2; wasteLevel += 1; attitude -= 1;
             return hydration;
         }
 
         public int Potty()
         {
-            wasteLevel -= 2; appetite -= 1; hydration -= 1;
+            Console.WriteLine("\n");
+            Console.WriteLine("you releived Grodd");
+            wasteLevel -= 2; appetite -= 1; hydration -= 1; attitude += 1;
             return skat;
         }
 
         public int Tude()
         {
-            appetite -= 1; hydration -= 1; wasteLevel += 2; attitude -= 3;
+            Console.WriteLine("\n");
+            Console.WriteLine("you played Grodd");
+            appetite -= 1; hydration -= 1; wasteLevel += 2; attitude += 3;
             return attitude;
-
         }
 
 
